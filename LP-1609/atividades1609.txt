@@ -1,0 +1,18 @@
+> Lista 16/09
+
+1) Crie um algoritmo que leia 5 preços de produtos, posteriormente, imprima o índice do produto mais caro e do preço.
+
+2) Leia o Tipo sanguineo de 10 pessoas, ao final, imprima o índice do cadastro e o tipo de cada sangue cadastrado.
+
+3) Faça a leitura de uma fita de RNA de 10 elementos. Após a leitura, faça o complemento de leitura dessa fita e imprima os elementos na sequencia correta.
+
+4) Um aluno deve preencher as notas trimestrais referentes a cada uma de suas 8 matérias, cada matéria deve ter o nome, nota e frequencia. Preencha os dados e posteriormente:
+    a) imprima a média de frequencia de todas as disciplinas
+    b) imprima a quantidade de notas acima da média (60%)
+
+5) Faça um programa que leia o nome e a nota de avaliação 6 filmes. Apos o cadastro de todos os filmes, exiba um menu com as opções:
+    a) Imprimir dados de 1 filme - escolher um índice e imprimir os dados
+    b) Avaliar um filme cadastrado - deve selecionar um índice e fazer a média da nova nota com a nota antiga.
+    c) Alterar dados de um filme cadatrado - deve escolher o índice de um filme para alterar seus dados.
+    d) Finalizar a execução do programa e imprimir todos os dados
+
