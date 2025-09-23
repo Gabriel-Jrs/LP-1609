@@ -1,38 +1,37 @@
-let filmes = [];
+let materias = [];  // Cria um array vazio chamado 'materias' para armazenar os dados das 8 matérias
 
-for(let i=0; i<6; i++){
-  filmes.push({
-    nome: prompt("Nome do filme " + (i+1)),
-    nota: prompt("Nota do filme " + (i+1))
-  });
+// Loop para coletar informações de 8 matérias
+for (let i = 0; i < 8; i++) {
+    // Solicita ao usuário o nome da matéria e armazena no array
+    let nome = prompt("Digite o nome da matéria " + (i + 1));  
+    // Solicita ao usuário a nota da matéria e armazena no array
+    let nota = prompt("Digite a nota da matéria " + (i + 1) + ":");  
+    // Solicita ao usuário a frequência da matéria e armazena no array
+    let frequencia = prompt("Digite a frequência (%) da matéria " + (i + 1));  
+    // Adiciona um objeto com os dados da matéria no array 'materias'
+    materias.push({nome: nome, nota: nota, frequencia: frequencia});  
 }
 
-for(let i=0; i<100; i++){
-  let op = prompt("a) Imprimir filme\nb) Avaliar filme\nc) Alterar filme\nd) Finalizar");
-  if(op==="a"){
-    let idx = prompt("Índice (0 a 5):");
-    if(idx>=0 && idx<6) console.log(filmes[idx].nome, filmes[idx].nota);
-    else console.log("Índice inválido");
-  }
-  else if(op==="b"){
-    let idx = prompt("Índice (0 a 5):");
-    if(idx>=0 && idx<6){
-      let n = prompt("Nova nota:");
-      filmes[idx].nota += n;
-      console.log("Nota atualizada: " + filmes[idx].nota);
-    } else console.log("Índice inválido");
-  }
-  else if(op==="c"){
-    let idx = prompt("Índice (0 a 5):");
-    if(idx>=0 && idx<6){
-      filmes[idx].nome = prompt("Novo nome:");
-      filmes[idx].nota = prompt("Nova nota:");
-      console.log("Dados atualizados");
-    } else console.log("Índice inválido");
-  }
-  else if(op==="d"){
-    for(let j=0; j<6; j++) console.log(j + ": " + filmes[j].nome + " - " + filmes[j].nota);
-    break;
-  }
-  else console.log("Opção inválida");
+let somaFrequencia = 0;  // Inicializa a variável para somar as frequências de todas as matérias
+
+let contadorNotasAcimaMedia = 0;  // Inicializa o contador para contar quantas notas são acima de 60
+
+// Loop para percorrer todas as matérias armazenadas no array
+for (let i = 0; i < materias.length; i++) {
+    // Converte a frequência para número e adiciona à soma total de frequências
+    somaFrequencia += Number(materias[i].frequencia);  
+    
+    // Converte a nota para número e verifica se é maior que 60
+    if (Number(materias[i].nota) > 60) {
+        contadorNotasAcimaMedia++;  // Se a nota for maior que 60, incrementa o contador
+    }
 }
+
+// Calcula a média das frequências dividindo a soma das frequências pelo número total de matérias
+let mediaFrequencia = somaFrequencia / materias.length;
+
+// Exibe no console a média das frequências das matérias com o símbolo de porcentagem
+console.log("Média de frequência de todas as disciplinas: " + mediaFrequencia + "%");
+
+// Exibe no console o número de matérias que têm notas acima de 60
+console.log("Quantidade de notas acima da média (60%): " + contadorNotasAcimaMedia);
